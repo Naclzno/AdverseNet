@@ -1,4 +1,4 @@
-# PointOcc: Cylindrical Tri-Perspective View for Point-based 3D Semantic Occupancy Prediction
+# AdverseNet
 
 ### [Paper](https://arxiv.org/pdf/2308.16896)
 
