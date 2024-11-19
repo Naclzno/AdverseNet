@@ -21,7 +21,9 @@ generic features of different kinds of adverse weather, while
 the second stage concentrates on learning the specific features
 associated with each type of adverse weather.**
 
-![overview](./assets/overview.png =50%x)
+<div style="text-align: center;">
+    <img src="./assets/overview.png" alt="overview" width="50%">
+</div>
 
 ## Abstract
 
