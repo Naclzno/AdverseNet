@@ -29,15 +29,19 @@ In the field of autonomous driving, a pressing issue is how to enable LiDAR to a
 
 ![network](./assets/network.png)
 
-## Results
+## Qualitative Results
 
-### DENSE Dataset
+### Rainy Weather
 
-![results_DENSE](./assets/results_DENSE.png)
+![results_rain](./assets/results_rain.png)
 
-### SnowyKITTI Dataset
+### Snowy Weather
 
-![results_SnowyKITTI](./assets/results_SnowyKITTI.png)
+![results_snow](./assets/results_Snow.png)
+
+### Foggy Weather
+
+![results_fog](./assets/results_fog.png)
 
 ## Installation
 
