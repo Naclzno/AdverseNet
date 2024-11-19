@@ -1,43 +1,51 @@
-# AdverseNet
+# AdverseNet: A Unified LiDAR Point Cloud Denoising Network for Autonomous Driving in Adverse Weather
 
-### [Paper](https://arxiv.org/pdf/2308.16896)
+### [Paper]()
 
-> PointOcc: Cylindrical Tri-Perspective View for Point-based 3D Semantic Occupancy Prediction
+> AdverseNet: A Unified LiDAR Point Cloud Denoising Network for Autonomous Driving in Adverse Weather
 
-> Sicheng Zuo*, [Wenzhao Zheng](https://wzzheng.net/)\* $\dagger$, [Yuanhui Huang](https://scholar.google.com/citations?hl=zh-CN&user=LKVgsk4AAAAJ), [Jie Zhou](https://scholar.google.com/citations?user=6a79aPwAAAAJ&hl=en&authuser=1), [Jiwen Lu](http://ivg.au.tsinghua.edu.cn/Jiwen_Lu/)$\ddagger$
+> [Xinyuan Yan](https://naclzno.github.io/Xinyuan-Yan/) $\dagger$, Junxing Yang, Yu Liang, Yanjie Ma, Yida Li, Yidan Zhang, and He Huang $\ddagger$
 
-\* Equal contribution $\dagger$ Project leader $\ddagger$ Corresponding author
+$\dagger$ Project leader $\ddagger$ Corresponding author
 
 ## Highlights
 
-- **PointOcc enables the use of 2D image backbones for efficient point-based 3D semantic occupancy prediction.**
-- **The Lidar-only PointOcc even outperforms Lidar & Camera multi-modal methods by a large margin.**
+- **We propose AdverseNet, a point cloud denoising
+network capable of simultaneously handling three types of
+adverse weather conditions: rain, snow, and fog. In
+AdverseNet, we utilize the Cylindrical TPV representation for
+the point cloud.**
+- **During the training process, we employ a two-stage
+training strategy. The first stage focuses on learning the
+generic features of different kinds of adverse weather, while
+the second stage concentrates on learning the specific features
+associated with each type of adverse weather.**
 
 ![overview](./assets/overview.png)
 
-## Introduction
+## Abstract
 
-Semantic segmentation in autonomous driving has been undergoing an evolution from sparse point segmentation to dense voxel segmentation, where the objective is to predict the semantic occupancy of each voxel in the concerned 3D space. The dense nature of the prediction space has rendered existing efficient 2D-projection-based methods (e.g., bird's eye view, range view, etc.) ineffective, as they can only describe a subspace of the 3D scene. To address this, we propose a cylindrical tri-perspective view (TPV) to represent point clouds effectively and comprehensively and a PointOcc model to process them efficiently. Considering the distance distribution of LiDAR point clouds, we construct a tri-perspective view in the cylindrical coordinate system for more fine-grained modeling of nearer areas. We employ spatial group pooling to maintain structural details during projection and adopt 2D backbones to efficiently process each TPV plane. Finally, we obtain the features of each point by aggregating its projected features on each of the processed TPV planes without the need for any post-processing. Extensive experiments on both 3D occupancy prediction and LiDAR segmentation benchmarks demonstrate that the proposed PointOcc achieves state-of-the-art performance with much faster speed. Specifically, despite only using LiDAR, PointOcc significantly outperforms all other methods, including multi-modal methods, with a large margin on the OpenOccupancy benchmark.
+In the field of autonomous driving, a pressing issue is how to enable LiDAR to accurately perceive the 3D environment around the vehicle without being affected by rain, snow, and fog. Specifically, rain, snow, and fog can be present within the LiDAR's detection range and create noise points. To address this problem, we propose a unified denoising network, AdverseNet, for adverse weather point clouds, which is capable of removing noise points caused by rain, snow, and fog from LiDAR point clouds. In AdverseNet, we adopt the cylindrical Tri-Perspective View (TPV) representation for point clouds and employ a two-stage training strategy. In the first training stage, generic features of rain, snow, and fog noise points are learned. In the second training stage, specific weather features are learned. We conducted comparative experiments on the DENSE dataset and the SnowyKITTI dataset, and the results show that the performance of our method on both datasets is significantly improved compared to other methods, with the Mean Intersection-over-Union (MIoU) reaching 94.67% and 99.33%, respectively. Our proposed AdverseNet enhances the LiDAR sensing capability in rain, snow, and fog, ensuring the safe operation of autonomous vehicles in adverse weather conditions.
 
 ![network](./assets/network.png)
 
 ## Results
 
-### 3D Semantic Occupancy Prediction
+### DENSE Dataset
 
-![results_sop](./assets/results_sop.png)
+![results_DENSE](./assets/results_DENSE.png)
 
-### LiDAR Segmentation
+### SnowyKITTI Dataset
 
-![results_seg](./assets/results_seg.png)
+![results_SnowyKITTI](./assets/results_SnowyKITTI.png)
 
 ## Installation
 
 1. Create a conda environment and activate it.
 
 ```
-conda create -n uniauto python=3.8
-conda activate uniauto
+conda create -n AdverseNet python=3.8
+conda activate AdverseNet
 ```
 
 2. Install PyTorch and torchvision following the [official instructions](https://pytorch.org/).
@@ -71,27 +79,12 @@ pip install pandas==1.4.4
 
 ## Preparing
 
-1. Download pretrain weights from [here](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth) and put it in pretrain/
-2. Follow detaild instructions to [prepare nuScenes-Occupancy](https://github.com/JeffWang987/OpenOccupancy/blob/main/docs/prepare_data.md).
-3. Folder structure:
-```
-PointOcc
-├── pretrain/
-│   ├── swin_tiny_patch4_window7_224.pth/
-├── data/
-│   ├── nuscenes/
-│   │   ├── maps/
-│   │   ├── samples/
-│   │   ├── sweeps/
-│   │   ├── lidarseg/
-│   │   ├── v1.0-test/
-│   │   ├── v1.0-trainval/
-│   │   ├── nuscenes_occ_infos_train.pkl/
-│   │   ├── nuscenes_occ_infos_val.pkl/
-│   ├── nuScenes-Occupancy/
-│   │   ├── scene_0ac05652a4c44374998be876ba5cd6fd/
-│   │   ├── ...
-```
+1. You can download the DENSE dataset [here](https://www.uni-ulm.de/index.php?id=101568) (credit to Heinzler *et al.*) and the SnowyKITTI dataset [here](https://www.dropbox.com/s/o3r654cdzfl405d/snowyKITTI.zip?dl=0) (credit to Seppänen *et al.*).
+
+2. To standardize dataset formats and remove invalid data, first run ./formats/DENSE/hdf5totxt.py to convert the DENSE format from .hdf5 to .txt. Then, use ./formats/DENSE/cnnfilter.py to filter out invalid points.
+
+3. Similarly, use ./formats/DENSE/binlabeltotxt+filter.py to convert the SnowyKITTI format from .bin and .label to .txt while simultaneously removing invalid points.
+
 
 ## Getting Started
 
@@ -99,37 +92,37 @@ PointOcc
 
 ### Training
 
-1. Train PointOcc for LiDAR segmentation task
+1. The first training stage
 
    ```
-   python train_seg.py --py-config config/pointtpv_nusc_lidarseg.py --work-dir work_dir/nusc_lidarseg/pointtpv
+   python train_Stage1.py --py-config /home/yxy/AdverseNet/config/AdverseNet_config.py --work-dir /home/yxy/work/fifth
    ```
 
-2. Train PointOcc for 3D semantic occupancy prediction task
+2. The second training stage
 
    ```
-   python train_occ.py --py-config config/pointtpv_nusc_occ.py --work-dir work_dir/nusc_occ/pointtpv
+   python train_Stage2.py --py-config /home/yxy/AdverseNet/config/AdverseNet_config.py --work-dir /home/yxy/work/fifth/K1-0.1 --flag K1 --lam 0.1
    ```
 
 ### Evaluation
 
-1. Evaluate PointOcc for LiDAR segmentation task
+1. Evaluation of the model in the first training stage
 
    ```
-   python eval_seg.py --py-config config/pointtpv_nusc_lidarseg.py --ckpt-path xxx --log-file work_dir/nusc_lidarseg/pointtpv/eval.log
+   python test_seg.py --py-config /home/yxy/AdverseNet/config/AdverseNet_config.py --ckpt-path xxx --log-file xxx --flag S1
    ```
 
-2. Evaluate PointOcc for 3D semantic occupancy prediction task
+2. Evaluation of the model in the second training stage
 
    ```
-   python eval_occ.py --py-config config/pointtpv_nusc_occ.py --ckpt-path xxx --log-file work_dir/nusc_occ/pointtpv/eval.log
+   python test_seg.py --py-config /home/yxy/AdverseNet/config/AdverseNet_config.py --ckpt-path xxx --log-file xxx  --flag K1
    ```
 
 ## Related Projects
 
-Our code mainly derives from [TPVFormer](https://github.com/wzzheng/tpvformer) and is also based on [Cylinder3D](https://github.com/xinge008/Cylinder3D). Many thanks to them!
+Our code mainly derives from [PointOcc](https://github.com/wzzheng/PointOcc) and is also based on [WGWS-Net](https://github.com/zhuyr97/WGWS-Net). Many thanks to them!
 
-## Citation
+<!-- ## Citation
 
 If you find this project helpful, please consider citing the following paper:
 ```
@@ -139,4 +132,4 @@ If you find this project helpful, please consider citing the following paper:
     journal={arXiv preprint arXiv:2308.16896},
     year={2023}
 }
-```
+``` -->
