@@ -37,7 +37,7 @@ In the field of autonomous driving, a pressing issue is how to enable LiDAR to a
 
 ### Snowy Weather
 
-![results_snow](./assets/results_Snow.png)
+![results_snow](./assets/results_snow.png)
 
 ### Foggy Weather
 
