@@ -21,7 +21,7 @@ generic features of different kinds of adverse weather, while
 the second stage concentrates on learning the specific features
 associated with each type of adverse weather.**
 
-![overview](./assets/overview.png)
+![overview](./assets/overview.png =50%x)
 
 ## Abstract
 
@@ -75,8 +75,6 @@ mim install "mmdet3d>=1.1.0rc0"
 pip install timm==0.4.12
 pip install torch_scatter
 pip install spconv-cu113
-#pip install numpy==1.19.5
-#pip install numba==0.48.0
 pip install scikit-image==0.19.3
 pip install pandas==1.4.4
 ```
