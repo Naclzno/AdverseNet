@@ -81,6 +81,9 @@ pip install pandas==1.4.4
 
 3. Similarly, use ./formats/DENSE/binlabeltotxt+filter.py to convert the SnowyKITTI format from .bin and .label to .txt while simultaneously removing invalid points.
 
+4. According to the table below, reorganize the sequence names and divide them into their corresponding files.
+
+![datasets](./figures/datasets_setting.png)
 
 ## Getting Started
 
