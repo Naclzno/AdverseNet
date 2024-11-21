@@ -4,7 +4,7 @@
 
 > AdverseNet: A Unified LiDAR Point Cloud Denoising Network for Autonomous Driving in Adverse Weather
 
-> [Xinyuan Yan](https://naclzno.github.io/Xinyuan-Yan/) $\dagger$, Junxing Yang, Yu Liang, Yanjie Ma, Yida Li, Yidan Zhang, and He Huang $\ddagger$
+> [Xinyuan Yan](https://naclzno.github.io/Xinyuan-Yan/) $\dagger$, Junxing Yang $\ddagger$, He Huang, Yu Liang, Yanjie Ma, Yida Li, and Yidan Zhang  
 
 $\dagger$ Project leader $\ddagger$ Corresponding author
 
