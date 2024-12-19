@@ -4,7 +4,7 @@
 
 > AdverseNet: A LiDAR Point Cloud Denoising Network for Autonomous Driving in Rainy, Snowy, and Foggy Weather
 
-> [Xinyuan Yan](https://naclzno.github.io/Xinyuan-Yan/) $\dagger$, Junxing Yang $\ddagger$, He Huang, Yu Liang, Yanjie Ma, and Yida Li
+> [Xinyuan Yan](https://naclzno.github.io/Xinyuan-Yan/) $\dagger$, Junxing Yang $\ddagger$, Yu Liang, Yanjie Ma, Yida Li, and He Huang
 
 $\dagger$ Project leader $\ddagger$ Corresponding author
 
@@ -120,6 +120,9 @@ pip install pandas==1.4.4
 ## Related Projects
 
 Our code mainly derives from [PointOcc](https://github.com/wzzheng/PointOcc) and is also based on [WGWS-Net](https://github.com/zhuyr97/WGWS-Net). Many thanks to them!
+
+## Contact
+If you have any questions, please contact yan1075783878@gmail.com
 
 <!-- ## Citation
 
