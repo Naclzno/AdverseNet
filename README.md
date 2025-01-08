@@ -136,7 +136,5 @@ If you find this project helpful, please consider citing the following paper:
   volume={},
   number={},
   pages={1-1},
-  keywords={Meteorology;Point cloud compression;Noise reduction;Training;Snow;Laser radar;Noise;Sensors;Rain;Clouds;Autonomous Driving;LiDAR;Adverse Weather;Point Cloud Denoising;Point Cloud Semantic Segmentation},
   doi={10.1109/JSEN.2024.3505234}}
-
 ```
