@@ -124,14 +124,19 @@ Our code mainly derives from [PointOcc](https://github.com/wzzheng/PointOcc) and
 ## Contact
 If you have any questions, please contact yan1075783878@gmail.com
 
-<!-- ## Citation
+## Citation
 
 If you find this project helpful, please consider citing the following paper:
 ```
-@article{pointocc,
-    title={PointOcc: Cylindrical Tri-Perspective View for Point-based 3D Semantic Occupancy Prediction},
-    author={Zuo, Sicheng and Zheng, Wenzhao and Huang, Yuanhui and Zhou, Jie and Lu, Jiwen},
-    journal={arXiv preprint arXiv:2308.16896},
-    year={2023}
-}
-``` -->
+@ARTICLE{10832503,
+  author={Yan, Xinyuan and Yang, Junxing and Huang, He and Liang, Yu and Ma, Yanjie and Li, Yida and Zhang, Yidan},
+  journal={IEEE Sensors Journal}, 
+  title={AdverseNet: A Unified LiDAR Point Cloud Denoising Network for Autonomous Driving in Adverse Weather}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-1},
+  keywords={Meteorology;Point cloud compression;Noise reduction;Training;Snow;Laser radar;Noise;Sensors;Rain;Clouds;Autonomous Driving;LiDAR;Adverse Weather;Point Cloud Denoising;Point Cloud Semantic Segmentation},
+  doi={10.1109/JSEN.2024.3505234}}
+
+```
