@@ -129,12 +129,12 @@ If you have any questions, please contact yan1075783878@gmail.com
 If you find this project helpful, please consider citing the following paper:
 ```
 @ARTICLE{10832503,
-  author={Yan, Xinyuan and Yang, Junxing and Huang, He and Liang, Yu and Ma, Yanjie and Li, Yida and Zhang, Yidan},
+  author={Yan, Xinyuan and Yang, Junxing and Liang, Yu and Ma, Yanjie and Li, Yida and Huang, He},
   journal={IEEE Sensors Journal}, 
-  title={AdverseNet: A Unified LiDAR Point Cloud Denoising Network for Autonomous Driving in Adverse Weather}, 
+  title={AdverseNet: A LiDAR Point Cloud Denoising Network for Autonomous Driving in Rainy, Snowy, and Foggy Weather}, 
   year={2025},
-  volume={},
-  number={},
-  pages={1-1},
+  volume={25},
+  number={5},
+  pages={8950-8961},
   doi={10.1109/JSEN.2024.3505234}}
 ```
