@@ -1,10 +1,10 @@
-# AdverseNet: A Unified LiDAR Point Cloud Denoising Network for Autonomous Driving in Adverse Weather
+# AdverseNet: A LiDAR Point Cloud Denoising Network for Autonomous Driving in Rainy, Snowy, and Foggy Weather
 
 ### [Paper](https://ieeexplore.ieee.org/abstract/document/10832503)
 
-> AdverseNet: A Unified LiDAR Point Cloud Denoising Network for Autonomous Driving in Adverse Weather
+> AdverseNet: A LiDAR Point Cloud Denoising Network for Autonomous Driving in Rainy, Snowy, and Foggy Weather
 
-> [Xinyuan Yan](https://naclzno.github.io/Xinyuan-Yan/) $\dagger$, Junxing Yang $\ddagger$, He Huang, Yu Liang, Yanjie Ma, Yida Li, and Yidan Zhang
+> [Xinyuan Yan](https://naclzno.github.io/Xinyuan-Yan/) $\dagger$, Junxing Yang $\ddagger$, Yu Liang, Yanjie Ma, Yida Li, and He Huang
 
 $\dagger$ Project leader $\ddagger$ Corresponding author
 
