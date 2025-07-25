@@ -90,7 +90,7 @@ pip install pandas==1.4.4
 ------
 
 ### Pretrained models
-[Stage 1](https://github.com/Naclzno/AdverseNet/tree/main/weights/stage1) | [Stage 2 K1](https://github.com/Naclzno/AdverseNet/tree/main/weights/stage2-k1)
+[Stage1](https://github.com/Naclzno/AdverseNet/tree/main/weights/stage1) | [Stage2-K1](https://github.com/Naclzno/AdverseNet/tree/main/weights/stage2-k1)
 
 ### Training
 
